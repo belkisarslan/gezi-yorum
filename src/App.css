@@ -1,0 +1,14 @@
+.screen {
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden; */
+  text-align: center;
+  background-color: rgb(60, 158, 161);
+  
+}
+.screen.editable{
+  cursor: crosshair;
+}
