@@ -1,5 +1,5 @@
 .screen {
-  /* position: fixed;
+  /* 
   top: 0;
   left: 0;
   bottom: 0;
@@ -8,7 +8,43 @@
   text-align: center;
   background-color: rgb(60, 158, 161);
   
+  
 }
 .screen.editable{
   cursor: crosshair;
+}
+
+.leave-comment-text{
+  transform: translateY(-50%);
+  padding: 5px 10px;
+}
+
+.note{
+  background: var(--color);
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.note-box{
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .4);
+  z-index: 4;
+  transform: translateX(-50%) translateY(40px);
+  border-radius: 4px;
+}
+
+.note-box-number{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(calc(-100% - 20px));
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
