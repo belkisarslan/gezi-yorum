@@ -57,8 +57,6 @@ function App() {
         <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Turkey_provinces_blank_gray.svg/800px-Turkey_provinces_blank_gray.svg.png?20180915025326' alt=''></img>
         
         {mode && <LeaveCommentText/>}
-        
-        {mode && (<div>Yorum modu aktif!</div>)}
 
         {notes && notes.map(note => <Note {...note}/>)}
 
