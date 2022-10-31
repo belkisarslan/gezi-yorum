@@ -9,26 +9,26 @@ function App() {
 
   const screen = useRef(null)
   const [mode, setMode] = useState(false)
-  const [notes, setNotes] = useState([
-    {
-      id:'1',
-      note:'deneme notu',
-      color:'red',
-      position:{x:350, y:300}
-    }
-  ])
+  const [notes, setNotes] = (useState(localStorage.notes&&JSON.parse(localStorage.notes))||[])
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [boxPosition, setBoxPosition] = useState({ x:0, y:0 })
-  const [boxVisitable, setBoxVisitable] = useState(false)
+  const [boxVisitable, setBoxVisible] = useState(false)
 
   useEffect(() => {
     screen.current.focus()
   }, [])
 
+  useEffect(() => {
+    localStorage.setItem('notes', JSON.stringify(notes))
+  }, [notes])
+
   const handleKeyUp = (e) => {
-    if (e.key === 'c') {
+    if (e.key === 'Control') {
       setMode(!mode)
-      setBoxVisitable(false)
+      setBoxVisible(false)
+    }
+    if(e.key === 'Escape'){
+      setBoxVisible(false)
     }
   }
 
@@ -39,7 +39,7 @@ function App() {
   const handleClick = (e) => {
    if(mode){
     setBoxPosition({x:position.x, y:position.y})
-    setBoxVisitable(true)
+    setBoxVisible(true)
    }
   }
 
@@ -47,7 +47,9 @@ function App() {
     position,
     boxPosition,
     setMode,
-    notes 
+    notes,
+    setNotes,
+    setBoxVisible
   }
 
   return (
@@ -58,7 +60,7 @@ function App() {
         
         {mode && <LeaveCommentText/>}
 
-        {notes && notes.map(note => <Note {...note}/>)}
+        {notes && notes.map((note, key) => <Note key={key} {...note}/>)}
 
         {boxVisitable && <NoteBox/>}
 
