@@ -104,3 +104,9 @@
   opacity: .2;
   pointer-events: none;
 }
+
+.class-card{
+  position: absolute;
+  top: -9px;
+  z-index: 6;
+}
