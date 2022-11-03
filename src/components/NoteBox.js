@@ -7,17 +7,17 @@ export default function NoteBox() {
         {
             name:'note',
             color:'orange',
-            text:'Bir daha gidilir'
+            text:'Bir daha gidilir >>'
         },
         {
             name:'note',
             color:'red',
-            text:'Bir daha gidilmez'
+            text:'Bir daha gidilmez >>'
         },
         {
             name:'note',
             color:'green',
-            text:'Milyon kere gidilir'
+            text:'Milyon kere gidilir >>'
         }
     ]
     const { boxPosition, setBoxVisible, setMode, notes, setNotes } = useContext(MainContext)
@@ -54,9 +54,11 @@ export default function NoteBox() {
         style={{'--color':color, position: 'absolute', top: boxPosition.y, left: boxPosition.x }}>
             <span className='note-box-number'>{notes.length + 1}</span>
             <select onChange={changeColor}>
+            
                 {types.map((type, key) => (
-                <option key={key} value={type.color}>{type.text}</option>
+                <option key={key} value={type.color}>{type.text} </option>
                 ))}
+                
             </select>
             
             <textarea onChange={(e) => setNote(e.target.value)} cols="30" rows="5">

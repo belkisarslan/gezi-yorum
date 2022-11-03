@@ -4,8 +4,8 @@ import MainContext from './MainContext';
 import { LeaveCommentText } from './components/LeaveCommentText';
 import Note from './components/Note';
 import NoteBox from './components/NoteBox';
+import Header from './components/Header';
 
-import CardComponent from './components/CardComponent';
 
 function App() {
 
@@ -28,9 +28,11 @@ function App() {
     if (e.key === 'Control') {
       setMode(!mode)
       setBoxVisible(false)
+    
     }
     if(e.key === 'Escape'){
       setBoxVisible(false)
+
     }
   }
 
@@ -55,10 +57,10 @@ function App() {
   }
 
 
+
   return (
     
     <MainContext.Provider value={data}>
-      
       
       <div ref={screen} tabIndex={0} onClick={handleClick} onMouseMove={handleMouseMove} onKeyUp={handleKeyUp} className={`screen ${mode && 'editable'}`}>
         
@@ -72,10 +74,8 @@ function App() {
 
         {boxVisitable && <NoteBox/>}
 
-        <CardComponent/>
-        
-        
-        
+        <Header/>
+         
       </div>
       
     </MainContext.Provider>
