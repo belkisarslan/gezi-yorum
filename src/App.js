@@ -11,7 +11,7 @@ function App() {
 
   const screen = useRef(null)
   const [mode, setMode] = useState(false)
-  const [notes, setNotes] = (useState(localStorage.notes&&JSON.parse(localStorage.notes))||[])
+  const [notes, setNotes] = useState(localStorage.notes && JSON.parse(localStorage.notes) || [])
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [boxPosition, setBoxPosition] = useState({ x:0, y:0 })
   const [boxVisitable, setBoxVisible] = useState(false)
@@ -21,7 +21,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-    localStorage.setItem('notes', JSON.stringify(notes))
+   localStorage.setItem('notes', JSON.stringify(notes))
   }, [notes])
 
   const handleKeyUp = (e) => {

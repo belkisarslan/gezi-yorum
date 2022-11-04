@@ -9,11 +9,11 @@ const Header = () => {
         >
             <NavbarBrand href="/">
                 <h1>
-                    <span class="material-symbols-outlined">
+                    <span className="material-symbols-outlined">
                         edit_location
                     </span>
                     gezi-yorum
-                    <span class="material-symbols-outlined">
+                    <span className="material-symbols-outlined">
                         edit_location
                     </span>
                 </h1>
